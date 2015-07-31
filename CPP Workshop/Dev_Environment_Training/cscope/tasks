@@ -1,0 +1,14 @@
+1. Set up cscope database.
+cscope -q -R -b -i sources.files
+2. open editor
+cscope -d
+2. Do following tasks.
+	Find this global definition:
+	Find functions called by this function:
+	Find functions calling this function:
+	Find this text string:
+	Change this text string:
+	Find this file:
+	Find files #including this file:
+3. set CSCOPE_EDITOR variable.
+

@@ -1,0 +1,14 @@
+1. write(w) , write and quit(wq), quit(q), quit without saving(q!)
+2. undo(u) , redo(ctrl+r)
+3. delete current line(dd), multiple lines(<starting-line>,<end-line>d)
+4. cut(c), copy(y), paste(p)
+5. search string(/<string>)
+6. search and replace(%s/original-string/new-string/g)
+7. .vimrc file 
+   - tab size
+   - line numbers
+   - sourcing
+   - maps
+   - if/else
+   - macros
+

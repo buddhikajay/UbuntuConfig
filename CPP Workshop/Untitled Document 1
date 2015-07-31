@@ -1,0 +1,91 @@
+You are required to configure the following software to avoid inconveniences. 
+
+    VIM
+    cscope
+    g++
+    GDB
+    Valgrind
+
+
+The specific details of the workshop and the areas that will be covered are as follows. 
+
+
+Workshop on C++ development environment in Linux
+
+ 
+
+§  Basic Tools;
+
+ 
+
+v  VIM
+
+·         Explanation on the flexibility of the editor
+
+·         Demonstration on useful and frequently used commands within VIM
+
+·         Demonstration on advanced usages of VIM
+
+ 
+
+v  Cscope
+
+·         Requirement explanation
+
+·         Demonstration on setting up database
+
+·         Demonstration on using different functionalities
+
+·         CSCOPE.EDTOR variable
+
+·         Compilation tools
+
+ 
+
+v  G++
+
+·         Demonstarion on different phases in compilation (preprocessing, assembling, compiling and linking)
+
+·         Compiler optimizations
+
+ 
+
+§  Error detection tools:
+
+ 
+
+v  GDB
+
+·         Requirement explanation using a segmentation fault in a C++ code
+
+·         Demonstration on finding a segmentation fault
+
+·         Demonstration on inspecting the call stack and printing
+
+ 
+
+v  Valgrind
+
+ 
+
+·         Brief explanation on heap, stack, new, delete key words
+
+ 
+
+·         Usages of Valgrind
+
+·         Detecting memory leaks
+
+·         Illegal read/ write
+
+·         Conditional jump
+
+                                                                                                             
+
+·         Each of the above usages will consist of the following parts
+
+·         Explanation of the problem
+
+·         Explanation on why we need to fix it
+
+·         Demonstration on how to use valgrind for finding those errors in code 

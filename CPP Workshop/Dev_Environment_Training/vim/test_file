@@ -1,0 +1,39 @@
+#AUTHOR : 
+A.ROOT = 5.4.1/5.4.1-Beta-C1/code/A
+
+#remove following lines
+remove me 01
+remove me 02
+remove me 03
+remove me 04
+remove me 05
+
+
+#remove following long line 
+remove me remove me  remove me  remove me remove me remove me
+
+C.ROOT = 5.4.1/5.4.1-Beta-C1/code/C
+
+
+D.ROOT = 5.4.1/5.4.1-Beta-C1/code/D
+E.ROOT = 5.4.1/5.4.1-Beta-C1/code/E
+F.ROOT = 5.4.1/5.4.1-Beta-C1/code/F
+
+
+#this is commnented part
+#comment 01
+#commnet 02
+#comment 03
+#comment 04
+#comment 05
+
+B.ROOT = 5.4.1/5.4.1-Beta-C1/code/B
+
+
+#macros usage 
+func1 (0)
+func2 (0,1)
+func3 (0,1,2)
+func4 (a,b,c,d)
+
+

@@ -1,0 +1,119 @@
+Browser Management 	Linux
+Help 	F1
+Add Bookmark 	Ctrl+D
+Bookmarks Sidebar (toggle) 	Ctrl+B
+Browsing History (toggle) 	Ctrl+H
+Download History 	Ctrl+Y
+Clear Private Data 	Ctrl+Shift+Del
+Page Manipulation 	Linux
+Full Screen (toggle) 	F11
+Zoom In (Full Page)5 	Ctrl++
+Ctrl+Scroll down
+Zoom Out (Full Page)5 	Ctrl+-
+Ctrl+Scroll up
+Restore Page to Default View 	Ctrl+0
+Print 	Ctrl+P
+Reload Page 	F5
+Ctrl+R
+Force Reload Page (override cache) 	Ctrl+F5
+Ctrl+Shift+R
+Shift+Reload button
+Stop Loading 	Esc
+Save Page As 	Ctrl+S
+Page Source 	Ctrl+U
+Page Info 	Ctrl+I
+DOM Inspector 	Ctrl+Shift+I
+Page Navigation 	Linux
+Go Down One Line 	⇩
+Alt+Scroll down
+Go Up One Line 	⇧
+Alt+Scroll up
+Go Down One Screen 	PageDown
+Spacebar
+Shift+Backspace 3
+Go Up One Screen 	PageUp
+Shift+Spacebar
+Backspace 3
+Go to Bottom of Page 	End
+Go to Top of Page 	Home
+Move to Next Frame 	F6
+Move to Previous Frame 	Shift+F6
+Move Focus to Next Actionable Item 	Tab
+Move Focus to Previous Actionable Item 	Shift+Tab
+Web Navigation 	Linux
+Open Home Page 	Alt+Home
+Back one Page 	Alt+⇦
+Ctrl+[
+Shift+Scroll down
+Forward one Page 	Alt+⇨
+Ctrl+]
+Shift+Scroll up
+Open Link 	Enter
+Left-click
+Open Link (in new Background Tab)2 	Ctrl+Enter
+Ctrl+Left-click
+Middle-click
+Open Link (in new Foreground Tab)2 	Ctrl+Shift+Left-click
+Shift+Middle-click
+Paste URL in Tab 	Middle-click in Tab4
+Open Link in New Window 	Shift+Enter
+Shift+Left-click
+Save Link Target As 	Alt+Enter
+Caret Browsing 	F7
+Tabs and Windows 	Linux
+Open New Tab 	Ctrl+T
+Double-Click on Tab Bar
+Close Tab
+(close Window if only one tab) 	Ctrl+W
+Ctrl+F4
+Middle-click on Tab
+Undo Close Tab 	Ctrl+Shift+T
+Next Tab 	Ctrl+Tab
+Ctrl+PageDown
+Previous Tab 	Ctrl+Shift+Tab
+Ctrl+PageUp
+Select Tab [1 to 9] 	Alt+[1…9]
+Open New Window 	Ctrl+N
+Close Window 	Ctrl+Shift+W
+Alt+F4
+Location 	Linux
+Select Location Bar 	Ctrl+L
+Alt+D
+Complete .com Address 1 	Ctrl+Enter
+Complete .net Address 1 	Shift+Enter
+Complete .org Address 1 	Ctrl+Shift+Enter
+Open Address in New Tab 1 	Alt+Enter
+Open File 	Ctrl+O
+Search Engines 	Linux
+Select Search Bar 	Ctrl+K
+Ctrl+J
+Select Next Search Engine in Search Bar 	Ctrl+⇩
+Select Previous Search Engine in Search Bar 	Ctrl+⇧
+Open List of Search Engines in Search Bar 	Alt+⇩
+Alt+⇧
+Forms 	Linux
+Select Next Entry 	⇩
+Select Previous Entry 	⇧
+Toggle Checkbox 	Spacebar
+Auto Complete 	Linux
+Select Next Auto-Complete Entry 	⇩
+Select Previous Auto-Complete Entry 	⇧
+Delete Individual Auto-Complete Entry 	Shift+Del
+Text Manipulation 	Linux
+Select All 	Ctrl+A
+Alt+A
+Cut 	Ctrl+X
+Copy 	Ctrl+C
+Paste 	Ctrl+V
+Delete 	Del
+Undo 	Ctrl+Z
+Redo 	Ctrl+Shift+Z
+Ctrl+Y
+Search in Page 	Linux
+Find in This Page 	Ctrl+F
+Find Again 	Ctrl+G
+F3
+Find Previous 	Ctrl+Shift+G
+Shift+F3
+Quick Find Text 	/
+Quick Find Link 	'

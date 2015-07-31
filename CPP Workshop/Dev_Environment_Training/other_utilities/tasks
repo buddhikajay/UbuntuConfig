@@ -1,0 +1,27 @@
+1. Process related
+   ps - ps gives a snapshot of the current processes. If you want a repetitive update of this status, use top. 
+   top - top provides an ongoing look at processor activity in real time. It displays a listing of the most CPU-intensive tasks on the system.  
+   kill - kill command sends the specified signal to the specified process or process group.
+   bg - bg is a job control command which resumes suspended jobs without bringing them to the foreground.
+
+2. File related
+   ls,ll - list directory contents.
+   tree - tree command recursively lists directories that produces a depth indented listing of files
+
+3. Search related
+   grep - grep searches the given files for lines containing a match to the given pattern. By default, grep prints the matching lines.
+   find - search for files in a directory hierarchy.
+
+4. Other
+   alias - alias command creates a shotcut to a command.
+   which - shows the full path of (shell) commands.
+
+5. Output redirection and pipe
+   >  - redirects standard output e.g. ls > file_list
+   >> - appends standard output e.g. ls >> file_list
+   |  - pipe feds the standard output of one command into the standard input of another.  e.g. ps aux | grep '$1' 
+   
+6. How to implement your own commands. 
+   - get the executable from g++ folder and make it a linux command.
+   
+

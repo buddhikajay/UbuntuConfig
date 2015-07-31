@@ -1,0 +1,7 @@
+1. Run program and see the segmentation fault.
+2. Run gdb and identify problematic line.
+3. Examine stack and get more information.
+4. Add breakpoints to determine the root cause for the issue.
+5. Run program and When hit a breakpoint open graphical view and go step by step.
+6. Determine root cause for the issue and fix.
+

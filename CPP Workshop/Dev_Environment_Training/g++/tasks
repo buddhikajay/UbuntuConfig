@@ -1,0 +1,9 @@
+1. Step by step compilation
+   - preprocessing
+   - assembling
+   - compiling
+   - linking
+2. Examine temp files.
+3. save-temps option
+4. examine provided C++ program and corresponding assembly program.
+5. use hexdump to check the output. 

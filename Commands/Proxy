@@ -1,0 +1,2 @@
+*when adding ppa Type to export the environment variables we are currently using type 
+sudo -E add-apt-repository ppa:webupd8team/tor-browser

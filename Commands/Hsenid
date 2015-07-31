@@ -1,0 +1,4 @@
+./sdp-simmulator console
+*simmulator local host:10001
+*app local host 3000
+*./sdp-simmulator console.sh

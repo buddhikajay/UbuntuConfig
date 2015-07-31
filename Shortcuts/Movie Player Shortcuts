@@ -1,0 +1,40 @@
+
+       a                 cycle between aspect ratios
+       p                 toggle between play and pause
+       Esc               exit full screen mode
+       f                 toggle full screen
+       h                 toggle display of on-screen controls
+       0                 resize window to 50% original size
+       1                 resize window to 100% original size
+       2                 resize window to 200% original size
+       r                 zoom in the video
+       t                 zoom out the video
+       d                 start and stop the telestrator (drawing) mode
+       e                 erase the drawing
+       Left-arrow        skip back 15 seconds
+       Right-arrow       skip forward 60 seconds
+       Shift+Left-arrow  skip back 5 seconds
+       Shift+Right-arrow skip forward 15 seconds
+       Ctrl+Left-arrow   skip back 3 minutes
+       Ctrl+Right arrow  skip forward 10 minutes
+       Up-arrow          increase volume by 8%
+       Down-arrow        decrease volume by 8%
+       b                 jump back to previous chapter/movie in playlist
+       n                 jump to next chapter/movie in playlist
+       q                 quit
+       Ctrl+E            eject the playing optical media
+       Ctrl+O            open a new file
+       Ctrl+L            open a new URI
+       F9                toggle display of the playlist
+       m                 show the DVD menu
+       c                 show the DVD chapter menu
+
+q quit
+
+Left arrowskip backward 15 sec
+
+Right arrow skip ahead 1 minute
+
+Shift+Left arrow skip backwards 5 sec
+
+Shift+Right arrow skip ahead 15 sec

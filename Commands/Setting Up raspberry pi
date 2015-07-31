@@ -1,0 +1,114 @@
+hostname -I
+VNC:server for remot desktop sessions
+
+*****************************************
+sudo apt-get install tightvncserver
+tightvncserver
+vncserver :0 -geometry 1920x1080 -depth 24
+
+
+on cd /etc/init.d/vncboot
+
+### BEGIN INIT INFO
+# Provides: vncboot
+# Required-Start: $remote_fs $syslog
+# Required-Stop: $remote_fs $syslog
+# Default-Start: 2 3 4 5
+# Default-Stop: 0 1 6
+# Short-Description: Start VNC Server at boot time
+# Description: Start VNC Server at boot time.
+### END INIT INFO
+
+#! /bin/sh
+# /etc/init.d/vncboot
+
+USER=pi
+HOME=/home/pi
+
+export USER HOME
+
+case "$1" in
+ start)
+  echo "Starting VNC Server"
+  #Insert your favoured settings for a VNC session
+  su - pi -c "/usr/bin/vncserver :0 -geometry 1280x800 -depth 16 -pixelformat rgb565"
+  ;;
+
+ stop)
+  echo "Stopping VNC Server"
+  /usr/bin/vncserver -kill :0
+  ;;
+
+ *)
+  echo "Usage: /etc/init.d/vncboot {start|stop}"
+  exit 1
+  ;;
+esac
+
+exit 0
+********************************************************************************
+set up 3g modem :
+
+http://raspberry-at-home.com/installing-3g-modem/
+sudo /usr/bin/modem3g/sakis3g connect
+/usr/bin/modem3g/sakis3g --interactive "menu" "console"
+********************************************************************************
+locale issue:
+
+LC_ALL="en_GB.utf8"
+to /etc/environment
+********************************************************************************
+enabling dbus:http://www.correlatedcontent.com/blog/bluetooth-keyboard-on-the-raspberry-pi/
+sudo update-rc.d -f dbus defaults
+********************************************************************************
+Bluetooth:
+
+Bluetooth Advanced Audio Distribution Profile official doc : https://developer.bluetooth.org/TechnologyOverview/Pages/ImplementingAdvancedAudioDistributionProfile.aspx
+http://blog.stevenocchipinti.com/2012/10/bluetooth-audio-streaming-from-phone-to.html/
+pi bluetooth : https://www.raspberrypi.org/learning/robo-butler/bluetooth-setup/
+bluetooth error solved by :http://plugable.com/2015/05/11/quick-fix-for-problems-using-bluetooth-from-the-raspberry-pi-desktop
+http://nohands.sourceforge.net/
+https://launchpad.net/~sebastian-ruehl/+archive/ubuntu/nohands
+example c code : http://www.lightofdawn.org/wiki/wiki.cgi/BluezA2DP
+dmesg | grep -i blue
+
+sudo apt-get install --no-install-recommends bluetooth
+sudo service bluetooth status
+sudo apt-get install bluetooth bluez-utils blueman bluez python-gobject python-gobject-2
+sudo usermod -G bluetooth pi
+sudo apt-get remove raspberrypi-ui-mods
+
+C bluetooth lirbrasy
+sudo apt-get install libbluetooth-dev
+
+********************************************************************************
+Installing Dbus:http://www.linuxfromscratch.org/blfs/view/svn/general/dbus.html
+
+ubuntu
+http://ubuntuhak.blogspot.com/2014/04/installing-raspberry-pi-with-computer.html
+http://www.robertawood.com/blog/raspberry-pi/raspberry-pi-initial-setup-headless-no-monitor-or-keyboard-needed.html
+grep dnsmasq-dhcp /var/log/syslog
+
+apt-get install openssh-server
+
+remove cached key:ssh-keygen -R hostname
+sudo apt-get install tightvncviewer
+
+raspberry pi is armlf : https://blogs.oracle.com/jtc/entry/is_it_armhf_or_armel
+
+
+
+
+tooth:http://thethingsystem.com/dev/Bootstrapping-the-Raspberry-Pi.html
+
+
+************************************************************************
+Taskbar issue
+sudo cp /usr/share/lxpanel/profile/Lubuntu/panels/panel ~/.config/lxpanel/Lubuntu/panels
+
+Proxy
+
+nano 10proxy
+Acquire::http::Proxy "http://cache.mrt.ac.lk:3128/";
+
+
