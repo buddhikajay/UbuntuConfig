@@ -1,15 +1,14 @@
 export http_proxy=http://cache.mrt.ac.lk:3128
 export https_proxy=https://cache.mrt.ac.lk:3128
 
-#php for wordpres
-sudo apt-get install php5-gd libssh2-php
 
-#inkspace
-sudo add-apt-repository ppa:inkscape.dev/stable
-sudo apt-get install inkscape
 
-#okular pdf reader
-sudo apt-get install okular
+
+
+#nohands build environment
+#sudo apt-get install subversion g++ autoconf libtool libspeexdsp-dev libasound2-dev libbluetooth-dev libaudiofile-dev libdbus-1-dev
+#sudo apt-get install automake
+#sudo libtoolize && sudo aclocal && sudo autoheader && sudo autoconf && sudo automake --add-missing
 
 #Google Go language
 sudo apt-get install golang git mercurial
@@ -18,13 +17,4 @@ sudo apt-get install golang git mercurial
 #export GOPATH=$HOME/go
 #export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
-#google drive
-go get -u github.com/odeke-em/drive/cmd/drive
 
-#sozi
-sudo add-apt-repository ppa:sunab/sozi-release
-sudo apt-get install sozi
-
-#symfony
-sudo curl -LsS http://symfony.com/installer -o /usr/local/bin/symfony
-sudo chmod a+x /usr/local/bin/symfony

@@ -10,6 +10,12 @@ sudo -E add-apt-repository ppa:webupd8team/sublime-text-2
 sudo -E add-apt-repository ppa:kubuntu-ppa/backports 
 #terminator
 sudo -E add-apt-repository ppa:gnome-terminator
+#Inkscape
+sudo add-apt-repository ppa:inkscape.dev/stable
+#sozi
+sudo add-apt-repository ppa:sunab/sozi-release
+#Thunderbird
+sudo -E add-apt-repository ppa:ubuntu-mozilla-daily/ppa
 
 sudo apt-get update
 
@@ -80,6 +86,34 @@ sudo apt-get install freemind
 
 #xcalib
 sudo apt-get install xcalib
+
+#php for wordpres
+sudo apt-get install php5-gd libssh2-php
+
+#inkspace
+#sudo add-apt-repository ppa:inkscape.dev/stable
+sudo apt-get install inkscape
+
+#okular pdf reader
+sudo apt-get install okular
+
+#google drive
+go get -u github.com/odeke-em/drive/cmd/drive
+
+#sozi
+#sudo add-apt-repository ppa:sunab/sozi-release
+sudo apt-get install sozi
+
+#curl
+sudo apt-get install curl
+
+#symfony
+sudo curl -LsS http://symfony.com/installer -o /usr/local/bin/symfony
+sudo chmod a+x /usr/local/bin/symfony
+
+#Thunderbird
+#sudo -E add-apt-repository ppa:ubuntu-mozilla-daily/ppa
+sudo apt-get install thunderbird-trunk
 
 
 ###########

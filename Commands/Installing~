@@ -124,4 +124,5 @@ done
 Setting go path
 mkdir /path/to/a/folder
 export GOPATH=/path/to/a/folder
+source ~/.bashrc
 
