@@ -59,4 +59,33 @@ npm config rm https-proxy
 ********************************************************************************
 find the location of package:dpkg -l <package name> 
 ********************************************************************************
+Brightness Setup:
+Add follwing lines at the end of 'etc/rc.local' file, before exit 0 line. 'X' is the brightness level.
+
+echo 5 > /sys/class/backlight/acpi_video0/brightness
 ********************************************************************************
+Proxy:
+set:
+export http_proxy=http://cache.mrt.ac.lk:3128
+export https_proxy=https://cache.mrt.ac.lk:3128
+
+see: 
+env | grep proxy
+
+unset http_prox
+
+ls: list storage
+pwd: print workign directory
+man: manual pages
+touch: updates file modification time
+********************************************************************************
+Use 'startct' to start Aventail Connect (requires java)
+Use 'startctui' to run the Aventail Connect graphical interface (requires java)
+********************************************************************************
+sudo adduser <username>
+sudo adduser <username> sudo
+********************************************************************************
+bower update --allow-root
+********************************************************************************
+php app/console assets:install
+

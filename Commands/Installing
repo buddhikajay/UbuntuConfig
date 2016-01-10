@@ -2,6 +2,8 @@ JAVA:
 Install Oracle java from oracle web site.
 Command based GUI installer. Refer Digital Ocean
 Set etc/enviroment for JAVA_HOME and JDK_HOME
+"export JAVA_HOME=/usr/lib/jvm/java-8-oracle"
+
 Oracle JAVA is installed in /usr/local/lib
 ********************************************************************************************************************************************************************************************************
 Intellij Idea: 
@@ -34,9 +36,9 @@ sudo apt-get update
 sudo apt-get install bcmwl-kernel-source
 ********************************************************************************************************************************************************************************************************
 Brightness Setup:
-Add follwing lines at the end of 'etc/rc.local' file, before exit 0 line. 'X' is the brightness level.
+Add follwing lines at the end of 'etc/rc.local' file, before exit 0 line. '10' is the brightness level.
 
-echo 5 > /sys/class/backlight/acpi_video0/brightness
+echo 10 > /sys/class/backlight/acpi_video0/brightness
 ********************************************************************************************************************************************************************************************************
 Intellij for android:
 If android key words are not recognized, click external libraries ones.
@@ -79,7 +81,7 @@ Xpad:Stiky notes
 
 
 dongle not detecting problem
-Mobile Partner:http://askubuntu.com/questions/323396/how-to-install-huawei-mobile-partner-21-in-ubuntu
+Mobile Partner:http://askubuntu./questions/323396/how-to-install-huawei-mobile-partner-21-in-ubuntu
 Modem Manager
 
 command based browser :w3m
@@ -127,4 +129,9 @@ export GOPATH=/path/to/a/folder
 source ~/.bashrc
 
 http://howtoubuntu.org/things-to-do-after-installing-ubuntu-14-04-trusty-tahr
+
+Cutecom : seri
+***************************************************************************
+Add my binary folder to PATH
+export PATH=~/bin/:$PATH
 

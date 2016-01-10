@@ -22,6 +22,9 @@ sudo ifconfig wlan0 up
 GIT
 
 git config --global http.proxy cache.mrt.ac.lk
+
+git fetch --all
+git reset --hard origin/master
 ********************************************************************************
 Network Manager
 
@@ -72,9 +75,65 @@ export https_proxy=https://cache.mrt.ac.lk:3128
 see: 
 env | grep proxy
 
-unset http_prox
+unset http_proxy
 
 ls: list storage
 pwd: print workign directory
 man: manual pages
 touch: updates file modification time
+********************************************************************************
+Use 'startct' to start Aventail Connect (requires java)
+Use 'startctui' to run the Aventail Connect graphical interface (requires java)
+********************************************************************************
+sudo adduser <username>
+sudo adduser <username> sudo
+********************************************************************************
+bower update --allow-root
+********************************************************************************
+composer update && \
+git pull && \
+php app/console cache:clear --env=prod --no-debug && \
+php app/console assetic:dump --env=prod --no-debug && \
+php app/console doctrine:schema:update  --force && \
+php app/console assets:install && \
+sudo chmod -R 777 app/cache app/logs
+
+php app/console gos:websocket:server
+
+*******************************************************************************
+php app/console server:start siplo.lk:8000 --env=prod --no-debug
+php app/console server:stop siplo.lk:8000 --env=prod --no-debug
+
+
+sudo chgrp -R www-data /var/www/
+sudo find /var/www/SiploELearning/web -type d -exec chmod g=rwxs "{}" \;
+sudo find /var/www/SiploELearning/web -type f -exec chmod g=rws  "{}" \;
+
+sudo nginx_modsite -e test_website
+
+*******************************************************************************
+processes and ports : lsof
+
+
+
+*******************************************************************************
+MySql 
+
+CREATE DATABASE siplo_db;
+CREATE USER 'siplo'@'localhost' IDENTIFIED BY 'rampeta_pori';
+GRANT ALL PRIVILEGES ON siplo_db . * TO 'siplo'@'localhost';
+FLUSH PRIVILEGES;
+
+***********************************************************************************
+Nodejs forever
+
+forever -o /home/siplo/logs/foever.log -e /home/siplo/logs/foever_err.log  start server.js
+
+*************************************************************************************
+Linux Permissions
+
+rwx = 111 in binary = 7
+rw- = 110 in binary = 6
+r-x = 101 in binary = 5
+r-- = 100 in binary = 4
+

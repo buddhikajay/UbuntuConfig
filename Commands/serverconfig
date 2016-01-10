@@ -1,0 +1,84 @@
+#installing APC https://www.digitalocean.com/community/tutorials/how-to-install-alternative-php-cache-apc-on-a-cloud-server-running-ubuntu-12-04
+
+sudo apt-get install -y php-pear php5-dev make libpcre3-dev
+sudo apt-get install -y apache2-prefork-dev
+sudo pecl install apc
+
+#sudo nano /etc/php5/apache2/php.ini
+#add 
+#extension = apc.so
+#apc.shm_size = 64
+#apc.stat = 0
+
+sudo service apache2 restart
+
+#configuring vim to view .log files
+#~/.vim/ftdetect/logs.vim
+autocmd BufNewFile,BufReadPost *.log :set filetype=messages 
+autocmd BufNewFile,BufReadPost /var/log/* :set filetype=messages
+
+#or manually
+#:set filetype=messages
+
+#view permissions
+ls -la /var/www
+
+###############################33
+REDIS
+sudo apt-get updatewget http://download.redis.io/releases/redis-stable.tar.gz
+sudo apt-get install build-essential
+sudo apt-get install tcl8.5
+wget http://download.redis.io/releases/redis-stable.tar.gz
+tar xzf redis-stable.tar.gz
+cd redis-stable
+make
+make test
+sudo make install
+
+cd utils
+sudo ./install_server.sh
+sudo update-rc.d redis_6379 defaults
+#########################################
+sudo a2enmod rewrite && a2enmod proxy && sudo service apache2 restart
+
+#########################
+Etherdraw Canvas error
+
+sudo apt-get install libcairo2-dev libjpeg-dev libgif-dev
+
+
+#######################
+Mod Proxy
+
+aptitude install -y build-essential
+aptitude install -y libapache2-mod-proxy-html libxml2-dev
+a2enmod proxy
+a2enmod proxy_http
+a2enmod proxy_ajp
+a2enmod rewrite
+a2enmod deflate
+a2enmod headers
+a2enmod proxy_balancer
+a2enmod proxy_connect
+a2enmod proxy_html
+
+###########################
+Kurento
+
+echo "deb http://ubuntu.kurento.org trusty kms6" | sudo tee /etc/apt/sources.list.d/kurento.list
+wget -O - http://ubuntu.kurento.org/kurento.gpg.key | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install -y kurento-media-server-6.0
+sudo service kurento-media-server-6.0 start
+
+
+############################
+nGinX
+
+sudo apt-get install nginx
+sudo service nginx start
+sudo update-rc.d nginx defaults
+
+###############################
+Amazon
+http://www.mkyong.com/server/namecheap-domain-name-and-amazon-ec2/

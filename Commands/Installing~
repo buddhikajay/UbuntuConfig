@@ -2,6 +2,8 @@ JAVA:
 Install Oracle java from oracle web site.
 Command based GUI installer. Refer Digital Ocean
 Set etc/enviroment for JAVA_HOME and JDK_HOME
+"export JAVA_HOME=/usr/lib/jvm/java-8-oracle"
+
 Oracle JAVA is installed in /usr/local/lib
 ********************************************************************************************************************************************************************************************************
 Intellij Idea: 
@@ -79,7 +81,7 @@ Xpad:Stiky notes
 
 
 dongle not detecting problem
-Mobile Partner:http://askubuntu.com/questions/323396/how-to-install-huawei-mobile-partner-21-in-ubuntu
+Mobile Partner:http://askubuntu./questions/323396/how-to-install-huawei-mobile-partner-21-in-ubuntu
 Modem Manager
 
 command based browser :w3m
@@ -125,4 +127,11 @@ Setting go path
 mkdir /path/to/a/folder
 export GOPATH=/path/to/a/folder
 source ~/.bashrc
+
+http://howtoubuntu.org/things-to-do-after-installing-ubuntu-14-04-trusty-tahr
+
+Cutecom : seri
+***************************************************************************
+Add my binary folder to PATH
+export PATH=~/bin/:$PATH
 

@@ -1,0 +1,21 @@
+sudo chown -R www-data:www-data /var/www/html/TubeSite/web
+sudo chmod go-rwx /var/www/html/TubeSite/web
+sudo chmod go+x /var/www/html/TubeSite/web
+sudo chgrp -R www-data /var/www/html/TubeSite/web
+sudo chmod -R go-rwx /var/www/html/TubeSite/web
+sudo chmod -R g+rx /var/www/html/TubeSite/web
+sudo chmod -R g+rwx /var/www/html/TubeSite/web
+
+sudo chown -R www-data:www-data /root/apps/tourismonnet/TubeSite/web
+sudo chmod go-rwx /root/apps/tourismonnet/TubeSite/web
+sudo chmod go+x /root/apps/tourismonnet/TubeSite/web
+sudo chgrp -R www-data /root/apps/tourismonnet/TubeSite/web
+sudo chmod -R go-rwx /root/apps/tourismonnet/TubeSite/web
+sudo chmod -R g+rx /root/apps/tourismonnet/TubeSite/web
+sudo chmod -R g+rwx /root/apps/tourismonnet/TubeSite/web
+
+sudo ape-get install youtube-dl
+
+sudo -E apt-add-repository ppa:team-xbmc/ppa
+sudo apt-get install kodi
+
