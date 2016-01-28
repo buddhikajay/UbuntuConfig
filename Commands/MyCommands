@@ -60,7 +60,7 @@ npm config set https-proxy http://proxy.company.com:8080
 npm config rm proxy
 npm config rm https-proxy
 ********************************************************************************
-find the location of package:dpkg -l <package name> 
+find the location of package:dpkg -l <package name>
 ********************************************************************************
 Brightness Setup:
 Add follwing lines at the end of 'etc/rc.local' file, before exit 0 line. 'X' is the brightness level.
@@ -72,7 +72,7 @@ set:
 export http_proxy=http://cache.mrt.ac.lk:3128
 export https_proxy=https://cache.mrt.ac.lk:3128
 
-see: 
+see:
 env | grep proxy
 
 unset http_proxy
@@ -90,8 +90,10 @@ sudo adduser <username> sudo
 ********************************************************************************
 bower update --allow-root
 ********************************************************************************
-composer update && \
+
 git pull && \
+composer update && \
+sudo rm -rf /home/ubuntu/siplo/SiploELearning/app/cache/pro~ && \
 php app/console cache:clear --env=prod --no-debug && \
 php app/console assetic:dump --env=prod --no-debug && \
 php app/console doctrine:schema:update  --force && \
@@ -99,6 +101,10 @@ php app/console assets:install && \
 sudo chmod -R 777 app/cache app/logs
 
 php app/console gos:websocket:server
+
+php app/console doctrine:cache:clear-metadata
+php app/console doctrine:cache:clear-query
+php app/console doctrine:cache:clear-result
 
 *******************************************************************************
 php app/console server:start siplo.lk:8000 --env=prod --no-debug
@@ -110,6 +116,8 @@ sudo find /var/www/SiploELearning/web -type d -exec chmod g=rwxs "{}" \;
 sudo find /var/www/SiploELearning/web -type f -exec chmod g=rws  "{}" \;
 
 sudo nginx_modsite -e test_website
+nginx -c /etc/nginx/nginx.conf -t
+sudo /usr/sbin/nginx -c /etc/nginx/nginx.conf -t
 
 *******************************************************************************
 processes and ports : lsof
@@ -117,11 +125,16 @@ processes and ports : lsof
 
 
 *******************************************************************************
-MySql 
+MySql
 
+mysql -h localhost -u myname -p mypass mydb
+DESCRIBE tbl_name;
 CREATE DATABASE siplo_db;
 CREATE USER 'siplo'@'localhost' IDENTIFIED BY 'rampeta_pori';
 GRANT ALL PRIVILEGES ON siplo_db . * TO 'siplo'@'localhost';
+GRANT ALL PRIVILEGES ON siplo_db . * TO 'siplo'@'%' IDENTIFIED BY 'rampeta_pori' WITH GRANT OPTION;
+#comment this line to allow remote connections to mysql in /etc/mysql/my.cnf
+#bind-address = 127.0.0.1 to #bind-address = 127.0.0.1
 FLUSH PRIVILEGES;
 
 ***********************************************************************************
@@ -137,3 +150,35 @@ rw- = 110 in binary = 6
 r-x = 101 in binary = 5
 r-- = 100 in binary = 4
 
+***************************************************************************************
+YII
+
+protected/yiic shell protected/config/console.php
+
+****************************************************************************************
+server disk/memory usage : df -h
+swap:
+	sudo /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=2048
+	sudo /sbin/mkswap /var/swap.1
+	sudo /sbin/swapon /var/swap.1
+
+*****************************************************************************************
+usb_modeswitch
+sudo usb_modeswitch -c /etc/usb_modeswitch.conf
+
+****************************************************************************************
+deskto notifications
+notify-send "message"
+
+**************************************************************************************
+Python
+
+sudo apt-get -y install build-essential checkinstall && \
+sudo apt-get -y install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev && \
+cd ~/Downloads/ && \
+wget http://python.org/ftp/python/2.7.11/Python-2.7.11.tgz && \
+tar -xvf Python-2.7.11.tgz && \
+cd Python-2.7.11 && \
+./configure && \
+make && \
+sudo checkinstall

@@ -34,6 +34,11 @@ Wifi Driver Installation:
 
 sudo apt-get update
 sudo apt-get install bcmwl-kernel-source
+
+Wifi disabled by hardware switch
+
+rfkill unblock wifi
+
 ********************************************************************************************************************************************************************************************************
 Brightness Setup:
 Add follwing lines at the end of 'etc/rc.local' file, before exit 0 line. '10' is the brightness level.
@@ -134,4 +139,18 @@ Cutecom : seri
 ***************************************************************************
 Add my binary folder to PATH
 export PATH=~/bin/:$PATH
+
+Virtual Box VM
+**************
+remove gui : /etc/inittab
+iplink show
+/etc/sysconfig/network-scripts
+ll ifcfg-eht*
+iplink show
+
+restart network
+
+ip addr show
+
+
 

@@ -82,3 +82,4 @@ sudo update-rc.d nginx defaults
 ###############################
 Amazon
 http://www.mkyong.com/server/namecheap-domain-name-and-amazon-ec2/
+AWS Swap : http://stackoverflow.com/questions/17173972/how-do-you-add-swap-to-an-ec2-instance

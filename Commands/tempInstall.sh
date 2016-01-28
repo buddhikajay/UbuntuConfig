@@ -124,5 +124,10 @@ sudo apt-add-repository ppa:thomas.tsai/ubuntu-tuxboot
 sudo apt-get update
 sudo apt-get install tuxboot
 
+#Gthumb image Editor
+sudo add-apt-repository ppa:webupd8team/gthumb &&\
+sudo apt-get update && \
+sudo apt-get install gthumb
+
 
 

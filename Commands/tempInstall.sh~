@@ -119,5 +119,10 @@ curl -sL https://deb.nodesource.com/setup | sudo bash -
 sudo apt-get install -y nodejs
 sudo npm install -g bower
 
+#tuxboot
+sudo apt-add-repository ppa:thomas.tsai/ubuntu-tuxboot
+sudo apt-get update
+sudo apt-get install tuxboot
+
 
 

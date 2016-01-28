@@ -45,17 +45,18 @@ sudo apt-get -y install sublime-text
 sudo apt-get -y install workrave
 
 #node & npm
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.30.1/install.sh | bash &&\
 #to install node 0.12 run sudo apt-get install -y nodejs
-curl -sL https://deb.nodesource.com/setup | sudo bash -
+curl -sL https://deb.nodesource.com/setup | sudo bash - && \
 sudo apt-get install -y nodejs
 
 #express for nodejs
-sudo npm install -g bower
+sudo npm install -g bower && \
 
 #less for symfony bootsrap
-npm install -g less
+npm install -g less && \
 
-npm install -g bower
+npm install -g bower 
 
 #vnc client
 sudo apt-get -y install xtightvncviewer
