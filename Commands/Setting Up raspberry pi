@@ -52,6 +52,7 @@ set up 3g modem :
 http://raspberry-at-home.com/installing-3g-modem/
 sudo /usr/bin/modem3g/sakis3g connect
 /usr/bin/modem3g/sakis3g --interactive "menu" "console"
+sudo apt-get install pptpd
 ********************************************************************************
 locale issue:
 

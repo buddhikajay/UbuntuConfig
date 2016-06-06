@@ -152,5 +152,9 @@ restart network
 
 ip addr show
 
+*******************************************************************************
+remove unstable software settings
+home ./cache, ./config
+
 
 

@@ -87,6 +87,12 @@ Use 'startctui' to run the Aventail Connect graphical interface (requires java)
 ********************************************************************************
 sudo adduser <username>
 sudo adduser <username> sudo
+
+sudo groupadd <groupName>
+sudo usermod -a -G groupName userName
+
+sudo groups <username>
+groups #show groups
 ********************************************************************************
 bower update --allow-root
 ********************************************************************************
@@ -137,6 +143,31 @@ GRANT ALL PRIVILEGES ON siplo_db . * TO 'siplo'@'%' IDENTIFIED BY 'rampeta_pori'
 #bind-address = 127.0.0.1 to #bind-address = 127.0.0.1
 FLUSH PRIVILEGES;
 
+#database dump
+schemaOnly : mysqldump -d -h localhost -u team -pMyPassword adportal > adportal.sql
+whole database : mysqldump -h localhost -u team -pMyPassword adportal > adportal.sql
+
+#database restore
+in mysql command ling
+	mysql> create database mydb;
+	mysql> use mydb;
+	mysql> source db_backup.dump;	
+
+#show foreign key constraints
+
+SHOW CREATE TABLE mytable;
+
+
+#update
+UPDATE event set startDatetime = '2016-02-06 19:15:00' WHERE id = 36;
+
+#rename table
+RENAME TABLE `old_name` TO `new_name`
+
+#change password
+SET PASSWORD FOR 'jeffrey'@'localhost' = PASSWORD('mypass');
+
+
 ***********************************************************************************
 Nodejs forever
 
@@ -182,3 +213,58 @@ cd Python-2.7.11 && \
 ./configure && \
 make && \
 sudo checkinstall
+
+*******************************************************************************************************************
+Virtual Box
+
+VBoxManage internalcommands sethduuid CentOS_6.3_x64.vdi.vdi 
+
+******************************************************************************************************************
+TCP Dump
+
+tcpdump -i any -s 0 -w /home/omobio/buddhika/tcp_dump.pcap port 80
+
+
+*********************************************************************************************************************
+-maxdepth : depth of directory
+-type : file/diredtory/symlink
+-mtime : modified time
+-{} : place holder
+
+find . -maxdepth 1 -type f -mtime +1 -exec rm -f {} \;
+find . -name '*~' -exec rm -f {} \;
+find . -name '.svn' -exec rm -rf {} \;
+find . -name '*.php' -exec svn propset "svn:mime-type" "text/php" {} \;
+find . -type d -print0 | xargs -0 chmod 0755
+find . -type f -print0 | xargs -0 chmod 0644
+find . -type f -exec rm -f {} \;
+find . -type f -name '*.php' -exec dos2unix {} \;
+find . -type f -name '*.php' -exec sed --in-place 's/[[:space:]]\+$//' {} \;
+
+
+******************************************************************************************************************************
+sync with rsync
+
+rsync --progress --stats --recursive --times --delete --exclude "*bak" --exclude "*~" <source-path>/* <target-path>
+
+*********************************************************************************************************************************
+
+Linux Shell
+
+grep : -v : inverse
+
+********************************************************************************************************************************
+Init script
+sudo update-rc.d sms3 defaults
+sudo update-rc.d sms3 remove
+
+**********************************************************************************************************************************
+ awk \
+ -F'[\,]' \
+ -v OFS=','\
+ '{print $3, $5, $8}'\
+ *_ad_rsp_cdr.log 
+
+ ********************************************************************************************************************************
+ cron jobs
+ crontab -l -u user

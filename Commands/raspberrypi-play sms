@@ -1,0 +1,131 @@
+#http://kannel.org/
+#	https://www.howtoforge.com/tutorial/how-to-install-raspberry-pi-sms-server/
+sudo apt-get update &&  sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y &&\
+sudo -s &&\
+sudo apt-get install apache2 libapache2-mod-php5 mysql-server php5 php5-cli php5-mysql php5-mcrypt php5-gd php5-imap php5-curl &&\
+sudo php5enmod mcrypt &&\
+sudo service apache2 restart
+
+cd /tmp/ &&\
+wget http://downloads.sourceforge.net/project/playsms/playsms/Version%201.1/playsms-1.1.tar.gz &&\
+tar -zxf playsms-1.1.tar.gz -C /usr/local/src &&\
+ls -l /usr/local/src/ &&\
+cd /usr/local/src/playsms-1.1/ &&\
+cp install.conf.dist install.conf &&\
+vim install.conf
+
+./install-playsms.sh
+
+vim /etc/apache2/sites-available/playsms 
+
+##########################
+ServerAdmin webmaster@localhost
+
+DocumentRoot /var/www/html/playsms
+
+        Options FollowSymLinks
+        AllowOverride None
+
+
+        Options Indexes FollowSymLinks MultiViews
+        AllowOverride None
+        Order allow,deny
+        allow from all
+
+
+ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
+<directory "="" usr="" lib="" cgi-bin"="">
+        AllowOverride None
+        Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+        Order allow,deny
+        Allow from all
+
+
+ErrorLog ${APACHE_LOG_DIR}/error.log
+
+# Possible values include: debug, info, notice, warn, error, crit,
+# alert, emerg.
+LogLevel warn
+
+CustomLog ${APACHE_LOG_DIR}/access.log combined
+##########################
+
+service apache2 restart
+
+
+sudo apt-get install php5-gd
+sudo php5enmod gd
+
+
+apt-get install -y build-essential libusb-1.0 libusb-1.0-0-dev
+
+cd /tmp &&\
+wget http://www.draisberghof.de/usb_modeswitch/usb-modeswitch-2.3.0.tar.bz2 &&\
+tar jxvf usb-modeswitch-2.3.0.tar.bz2 &&\
+cd usb-modeswitch-2.3.0 &&\
+sudo make install &&\
+cd /tmp &&\
+wget http://www.draisberghof.de/usb_modeswitch/usb-modeswitch-data-20160112.tar.bz2 &&\
+tar xjvf usb-modeswitch-data-20160112.tar.bz2 &&\
+cd usb-modeswitch-data-20160112 &&\
+sudo make install
+
+cd /usr/local/src
+sudo wget http://smstools3.kekekasvi.com/packages/smstools3-3.1.15.tar.gz
+sudo tar -zxvf smstools3-3.1.15.tar.gz
+cd smstools3
+sudo make
+sudo make install
+
+sudo mkdir -p /var/log/sms/stats &&\
+sudo mkdir -p /var/spool/sms/{checked,failed,incoming,outgoing,sent} &&\
+sudo mkdir /var/spool/sms/modem1 &&\
+sudo mkdir /var/spool/sms/modem2 &&\
+sudo chown www-data:www-data -R /var/spool/sms &&\
+sudo chmod 777 -R /var/spool/sms
+
+sudo mv /etc/smsd.conf /etc/smsd.conf.dist && \
+cd /tmp && \
+wget -c https://raw.githubusercontent.com/antonraharja/playSMS/master/contrib/smstools/smsd.conf && \
+sudo cp smsd.conf /etc/
+
+sudo vim /etc/udev/rules.d/80-ttyusb-map.rules
+
+#######################
+ACTION=="add", KERNEL=="ttyUSB[0-9]*", PROGRAM="/etc/udev/rules.d/ttyusb-map.sh %p", SYMLINK+="gsm%c"
+#######################
+
+sudo touch /etc/udev/rules.d/ttyusb-map.sh 
+sudo chmod 755 /etc/udev/rules.d/ttyusb-map.sh 
+sudo vim /etc/udev/rules.d/ttyusb-map.sh
+
+############################
+#!/usr/bin/perl -w
+
+@items = split("/", $ARGV[0]);
+for ($i = 0; $i < @items; $i++) {
+    if ($items[$i] =~ m/^usb[0-9]+$/) {
+        print $items[$i + 1] . "\n";
+        last;
+    }
+}
+############################
+
+sudo vim /etc/smsd.conf
+
+/etc/init.d/sms3 restart
+ps ax | grep -v grep | grep smsd
+tail -f /var/log/smsd.log
+
+#kannel
+
+apt-get install kannel &&\
+mkdir -p /var/log/kannel /var/run/kannel /var/spool/kannel/store &&\
+chown -R kannel /var/log/kannel /var/run/kannel /var/spool/kannel/store &&\
+usermod -a -G dialout kannel
+
+sed -i 's/#START_SMSBOX/START_SMSBOX/' /etc/default/kannel &&\
+cp /etc/kannel/kannel.conf /etc/kannel/kannel.conf.dist &&\
+wget -c https://raw.githubusercontent.com/antonraharja/playSMS/master/contrib/kannel/kannel.conf &&\
+cp kannel.conf /etc/kannel/ &&\
+ls -l /etc/kannel/

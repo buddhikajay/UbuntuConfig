@@ -50,6 +50,9 @@ wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.30.1/install.sh | 
 curl -sL https://deb.nodesource.com/setup | sudo bash - && \
 sudo apt-get install -y nodejs
 
+#node version manager
+sudo npm install -g n
+
 #express for nodejs
 sudo npm install -g bower && \
 

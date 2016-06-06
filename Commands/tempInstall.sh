@@ -129,5 +129,15 @@ sudo add-apt-repository ppa:webupd8team/gthumb &&\
 sudo apt-get update && \
 sudo apt-get install gthumb
 
+#pidgin
+sudo add-apt-repository ppa:pidgin-developers/ppa
+sudo apt-get update
+sudo apt-get install pidgin
+
+#openshot
+sudo add-apt-repository ppa:openshot.developers/ppa &&\
+sudo apt-get update &&\
+sudo apt-get install openshot-qt
+
 
 
