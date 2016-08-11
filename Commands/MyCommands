@@ -93,6 +93,8 @@ sudo usermod -a -G groupName userName
 
 sudo groups <username>
 groups #show groups
+
+cut -d: -f1 /etc/passwd #list all users
 ********************************************************************************
 bower update --allow-root
 ********************************************************************************
@@ -143,6 +145,9 @@ GRANT ALL PRIVILEGES ON siplo_db . * TO 'siplo'@'%' IDENTIFIED BY 'rampeta_pori'
 #bind-address = 127.0.0.1 to #bind-address = 127.0.0.1
 FLUSH PRIVILEGES;
 
+#change password
+update user set password=PASSWORD('r1lam0ta') where User='root'
+
 #database dump
 schemaOnly : mysqldump -d -h localhost -u team -pMyPassword adportal > adportal.sql
 whole database : mysqldump -h localhost -u team -pMyPassword adportal > adportal.sql
@@ -166,6 +171,18 @@ RENAME TABLE `old_name` TO `new_name`
 
 #change password
 SET PASSWORD FOR 'jeffrey'@'localhost' = PASSWORD('mypass');
+
+#reset root password
+sudo /etc/init.d/mysql stop
+sudo mysqld_safe --skip-grant-tables &
+mysql -u root
+mysql> use mysql;
+mysql> update user set password=PASSWORD("NEW-ROOT-PASSWORD") where User='root';
+mysql> flush privileges;
+mysql> quit
+
+sudo /etc/init.d/mysql stop
+sudo /etc/init.d/mysql start
 
 
 ***********************************************************************************
@@ -268,3 +285,8 @@ sudo update-rc.d sms3 remove
  ********************************************************************************************************************************
  cron jobs
  crontab -l -u user
+
+ ********************************************************************************************************************************
+
+ File copy between servers
+ scp /home/buddhikajay/Downloads/Siplo.pdf buddhikajay@siplo.lk:/home/buddhikajay
