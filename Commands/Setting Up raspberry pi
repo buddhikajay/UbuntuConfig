@@ -1,3 +1,5 @@
+#http://arijitgeek.me/index.php/2016/08/03/access-your-raspberrypi-from-your-laptop/
+
 hostname -I
 VNC:server for remot desktop sessions
 

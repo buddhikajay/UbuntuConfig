@@ -25,8 +25,12 @@ sudo -E add-apt-repository -y ppa:umang/indicator-stickynotes
 sudo add-apt-repository -y ppa:stebbins/handbrake-releases
 #numix icons
 sudo add-apt-repository -y ppa:numix/ppa
+#php 5.6
+sudo add-apt-repository ppa:ondrej/php
 
 sudo apt-get update
+
+sudo apt-get -y install curl 
 
 #Oracle Java 8
 #sudo -E apt-add-repository -y ppa:webupd8team/java
@@ -45,9 +49,7 @@ sudo apt-get -y install sublime-text
 sudo apt-get -y install workrave
 
 #node & npm
-wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.30.1/install.sh | bash &&\
-#to install node 0.12 run sudo apt-get install -y nodejs
-curl -sL https://deb.nodesource.com/setup | sudo bash - && \
+curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 #node version manager
@@ -177,6 +179,11 @@ sudo apt-get -y install handbrake-gtk
 #composer
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&\
+php -r "if (hash_file('SHA384', 'composer-setup.php') === 'e115a8dc7871f15d853148a7fbac7da27d6c0030b848d9b3dc09e2a0388afed865e6a3d6b3c0fad45c48e2b5fc1196ae') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;" && \
+sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer &&\
+php -r "unlink('composer-setup.php');"
+
 #VNC sever
 sudo apt-get -y install tightvncviewer
 
@@ -229,6 +236,31 @@ echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse" 
 sudo apt-get update
 sudo apt-get install -y mongodb-org
 sudo service mongod start
+
+#android studio dependancies
+
+sudo apt-get install -y lib32z1 lib32ncurses5 lib32bz2-1.0 lib32stdc++6
+
+
+#php 5.6
+#sudo add-apt-repository ppa:ondrej/php
+sudo apt-get install php5
+
+#open terminal from folder location
+sudo apt-get install nautilus-open-terminal
+
+#PHP7 Packages for laravel
+#sudo apt-get install php7.0-zip 
+#sudo apt-get install php7.0-mbstring
+#sudo apt-get install php-curl
+#sudo apt-get install php7.0-gd
+
+
+#docker
+#curl is a dependancy
+sudo curl -fsSL https://get.docker.com/ | sh
+sudo gpasswd -a ${USER} docker
+sudo service docker start
 
 ###########
 #unset proxy
