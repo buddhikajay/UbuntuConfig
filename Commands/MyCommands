@@ -103,6 +103,7 @@ sudo groups <username>
 groups #show groups
 
 cut -d: -f1 /etc/passwd #list all users
+cat /etc/group # all groups
 grep 'grpup-name-here' /etc/group # list users of a group
 ********************************************************************************
 bower update --allow-root
@@ -418,3 +419,8 @@ lsb_release -a
 clear console
 history -cw
 ---------------------------------------------------------------
+
+React
+
+cd android && ./gradlew assembleRelease
+react-native run-android --variant=release
